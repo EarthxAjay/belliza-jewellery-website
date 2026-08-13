@@ -67,16 +67,16 @@ export const CONTACT = {
     blurb:
       "For inquiries related to manufacturing, operations, and India-based sales:",
     address:
-      "BELLIZA GEMS & JEWELS, BLOCK NO 12, 1 st FLOOR, BACK SIDE MOHANNAGER, 18 GALA, L.H ROAD, VARACHHA, SURAT 395006(GUJARAT), INDIA",
+      "BELLIZA GEMS & JEWELS, BLOCK NO 12, 1 st FLOOR, BACK SIDE MOHANNAGER, 18 GALA, L.H ROAD, VARACHHA, SURAT, GUJARAT, 395006 INDIA",
     whatsapp: "+91 7861889797",
     whatsappHref: "https://wa.me/+917861889797",
     email: "aurajewelerr@gmail.com",
   },
-  hongKong: {
+  mumbai : {
     title: "Mumbai (Global Sales & Logistics)",
     blurb:
       "For all international sales, logistics, and Mumbai market inquiries:",
-    address: "BANDRA KURLA COMPLEX AND BANDRA EAST, MUMBAI, INDIA 400051 INDIA",
+    address: "BANDRA KURLA COMPLEX AND BANDRA EAST, MUMBAI, 400051 INDIA",
     whatsapp: "+91 7861889797",
     whatsappHref: "https://wa.me/+917861889797",
     email: "aurajewelerr@gmail.com",

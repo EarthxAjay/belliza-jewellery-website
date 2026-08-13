@@ -108,7 +108,7 @@ function Contact() {
           </div>
 
           <div className="space-y-6">
-            {[CONTACT.india, CONTACT.hongKong].map((office) => (
+            {[CONTACT.india, CONTACT.mumbai].map((office) => (
               <article key={office.title} className="surface-panel p-8">
                 <h3 className="heading-xl text-xl">{office.title}</h3>
                 <p className="mt-3 text-sm text-muted-foreground">

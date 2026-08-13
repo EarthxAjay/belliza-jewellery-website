@@ -32,7 +32,7 @@ export function Footer() {
           </ul>
         </div>
 
-        {[CONTACT.india, CONTACT.hongKong].map((office) => (
+        {[CONTACT.india, CONTACT.mumbai].map((office) => (
           <div key={office.title}>
             <h3 className="eyebrow">{office.title}</h3>
             <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
