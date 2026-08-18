@@ -58,37 +58,37 @@ const PROCESS_STEPS = [
   {
     number: "01",
     title: "Diamond Growth",
-    // image: IMG.manufacturing,
+    image: IMG.Rough,
     body: "Lab-grown diamonds are produced using controlled CVD or HPHT growth technologies according to the required specifications.",
   },
   {
     number: "02",
     title: "Planning & Mapping",
-    // image: IMG.manufacturing,
+    image: IMG.Planning,
     body: "Rough material is evaluated and planned to determine the most suitable cutting strategy for the desired shape, size and quality.",
   },
   {
     number: "03",
     title: "Laser Cutting",
-    // image: IMG.manufacturing,
+    image: IMG.Lasercutting,
     body: "Precision laser technology can be used for accurate cutting and preparation of diamond material before polishing.",
   },
   {
     number: "04",
     title: "Cutting & Shaping",
-    // image: IMG.manufacturing,
+    image: IMG.Cutandshape,
     body: "Diamond cutters transform rough material into precise shapes designed to meet the requirements of the final stone.",
   },
   {
     number: "05",
     title: "Polishing",
-    // image: IMG.grading,
+    image: IMG.Polishing,
     body: "Careful polishing develops the facets and surface finish that contribute to a diamond's visual appearance and light performance.",
   },
   {
     number: "06",
     title: "Quality Control",
-    // image: IMG.grading,
+    image: IMG.Quality,
     body: "Finished diamonds undergo quality checks for specifications including carat weight, colour, clarity, cut-related characteristics, polish and symmetry.",
   },
 ];
@@ -115,41 +115,49 @@ const JEWELLERY_STEPS = [
   {
     number: "01",
     title: "Design Consultation",
+    image: IMG.Design,
     body: "We understand the jewellery concept, diamond requirements, metal preference, dimensions, budget and production requirements.",
   },
   {
     number: "02",
     title: "CAD Design",
+    image: IMG.Cad,
     body: "The jewellery concept can be developed into a detailed computer-aided design for review and production planning.",
   },
   {
     number: "03",
     title: "3D Model & Approval",
+    image: IMG.ThreeDmodel,
     body: "The proposed design can be reviewed for proportions, dimensions, stone placement and overall appearance before production.",
   },
   {
     number: "04",
     title: "Model Production",
+    image: IMG.ModelProduction,
     body: "An approved design can be converted into a production model suitable for the selected manufacturing process.",
   },
   {
     number: "05",
     title: "Casting",
+    image: IMG.Casting,
     body: "The jewellery model can be cast using the selected precious metal and required production specifications.",
   },
   {
     number: "06",
     title: "Filing & Finishing",
+    image: IMG.FillingFinishing,
     body: "The jewellery is cleaned, filed and prepared for diamond or gemstone setting and final finishing.",
   },
   {
     number: "07",
     title: "Diamond Setting",
+    image: IMG.DiamondSetting,
     body: "Diamonds and gemstones are carefully positioned and secured according to the approved jewellery design.",
   },
   {
     number: "08",
     title: "Polishing & QC",
+    image: IMG.Qc,
     body: "The finished jewellery undergoes final polishing and quality inspection before delivery.",
   },
 ];
@@ -266,7 +274,7 @@ function Manufacturing() {
         eyebrow ="Diamond & Jewellery Manufacturing"
         title="The Art & Science of Diamond Creation."
         subtitle="We are not resellers. We are the manufacturers. Explore the technology that defines our quality."
-        image={IMG.manufacturing}
+        image={IMG.Globaloffice}
       />
 
       {/* INTRODUCTION */}
@@ -313,7 +321,7 @@ function Manufacturing() {
               <article className="lux-panel rounded-2xl border border-[#E5DED0] bg-[#F1EBDD] shadow-[0_4px_18px_rgba(0,0,0,0.04)] group h-full overflow-hidden">
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <img
-                    // src={step.image}********************************************************************
+                    src={step.image}
                     alt={step.title}
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -376,7 +384,7 @@ function Manufacturing() {
           <Reveal y={40}>
             <div className="relative overflow-hidden rounded-2xl border border-[#E5DED0] lux-shadow">
               <img
-                src={IMG.manufacturing}
+                src={IMG.Globaloffice}
                 alt="Belliza diamond manufacturing facility in Surat"
                 loading="lazy"
                 className="h-full w-full object-cover"
@@ -499,24 +507,50 @@ function Manufacturing() {
           </h3>
         </Reveal>
 
-        <StaggerGroup
-          stagger={0.08}
-          className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
-        >
-          {JEWELLERY_STEPS.map((step) => (
-            <StaggerItem key={step.number}>
-              <article className="spec-tile rounded-xl border border-[#E5DED0] bg-[#F1EBDD] transition-all duration-500 h-full p-6 hover:border-[#D8C08A]">
-                <span className="heading-xl text-[#3A342A] text-3xl text-[#B08D57]">
-                  {step.number}
-                </span>
-                <h4 className="heading-xl text-[#3A342A] mt-4 text-lg">{step.title}</h4>
-                <p className="mt-3 text-sm leading-relaxed text-[#6F665A]">
-                  {step.body}
-                </p>
-              </article>
-            </StaggerItem>
-          ))}
-        </StaggerGroup>
+        ```tsx
+<StaggerGroup
+  stagger={0.08}
+  className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+>
+  {JEWELLERY_STEPS.map((step) => (
+    <StaggerItem key={step.number}>
+      <article className="lux-panel rounded-2xl border border-[#E5DED0] bg-[#F1EBDD] shadow-[0_4px_18px_rgba(0,0,0,0.04)] group h-full overflow-hidden">
+
+        {/* IMAGE */}
+        <div className="relative aspect-[16/10] overflow-hidden">
+          <img
+            src={step.image}
+            alt={step.title}
+            loading="lazy"
+            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+
+          {/* IMAGE OVERLAY */}
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/25 to-transparent" />
+
+          {/* STEP NUMBER */}
+          <span className="heading-xl absolute bottom-3 left-4 text-3xl text-[#B08D57]">
+            {step.number}
+          </span>
+        </div>
+
+        {/* CONTENT */}
+        <div className="p-6">
+          <h4 className="heading-xl text-lg text-[#3A342A]">
+            {step.title}
+          </h4>
+
+          <p className="mt-3 text-sm leading-relaxed text-[#6F665A]">
+            {step.body}
+          </p>
+        </div>
+
+      </article>
+    </StaggerItem>
+  ))}
+</StaggerGroup>
+```
+
       </Section>
 
       {/* DESIGN & CAD */}

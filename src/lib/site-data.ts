@@ -1,7 +1,27 @@
 export const IMG = {
    hero: "https://firebasestorage.googleapis.com/v0/b/cvdone-portal.firebasestorage.app/o/NavkarWebsite%2FHome%20page%20Image.png?alt=media&token=979849b9-0111-43a8-b379-ed7583d1e3ae",
 
-   
+  //  manufacturing
+
+  Rough : "https://res.cloudinary.com/lgpagaff/image/upload/v1787041799/roughdiamond.png",
+  Planning : "https://res.cloudinary.com/lgpagaff/image/upload/v1787042801/ChatGPT_Image_Aug_18_2026_02_15_30_PM.png",
+  Lasercutting : "https://res.cloudinary.com/lgpagaff/image/upload/v1787042637/images_1.jpg",
+  Cutandshape : "https://res.cloudinary.com/lgpagaff/image/upload/v1787043165/ChatGPT_Image_Aug_18_2026_02_21_29_PM.png",
+  Polishing : "https://res.cloudinary.com/lgpagaff/image/upload/v1787043421/ChatGPT_Image_Aug_18_2026_02_25_59_PM.png",
+  Quality : "https://res.cloudinary.com/lgpagaff/image/upload/v1787043781/ChatGPT_Image_Aug_18_2026_02_31_57_PM.png",
+
+  Globaloffice : "https://res.cloudinary.com/lgpagaff/image/upload/v1787044155/ChatGPT_Image_Aug_18_2026_02_38_09_PM.png",
+
+
+  Design : "https://res.cloudinary.com/lgpagaff/image/upload/v1787045180/manual-jewellery-design.jpg",
+  Cad : "https://res.cloudinary.com/lgpagaff/image/upload/v1787045199/Certificate-Course-in-Jewellery-Design-_-CAD-MATRIX-Vogue-Institute-of-Art-and-Design.webp",
+  ThreeDmodel : "https://res.cloudinary.com/lgpagaff/image/upload/v1787045694/ChatGPT_Image_Aug_18_2026_03_03_27_PM.png",
+ModelProduction : "https://res.cloudinary.com/lgpagaff/image/upload/v1787045974/ChatGPT_Image_Aug_18_2026_03_08_08_PM.png",
+Casting : "https://res.cloudinary.com/lgpagaff/image/upload/v1787045926/IMG_7227-1024x682.jpg",
+FillingFinishing : "https://res.cloudinary.com/lgpagaff/image/upload/v1787046180/generate-for-me-an-italian-goldsmith-making-diamond-jewellery-with-preciosin.webp",
+DiamondSetting : "https://res.cloudinary.com/lgpagaff/image/upload/v1787046236/images_2.jpg",
+Qc : "https://res.cloudinary.com/lgpagaff/image/upload/v1787046969/ChatGPT_Image_Aug_18_2026_03_24_58_PM.png",
+  // END
   surat:
     "https://firebasestorage.googleapis.com/v0/b/cvdone-portal.firebasestorage.app/o/NavkarWebsite%2Fabout_Surat.png?alt=media&token=253902af-699d-4a95-b10f-8229beb0b51a",
   hongKong:
