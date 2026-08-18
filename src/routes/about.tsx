@@ -72,6 +72,24 @@ function About() {
               benchmark for quality and ethical practices.
             </p>
           </article>
+          
+          <article className="surface-panel p-8">
+            <h3 className="heading-xl text-2xl">Our Vision</h3>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              To lead the global diamond industry into a more sustainable,
+              transparent, and technologically advanced future, setting the new
+              benchmark for quality and ethical practices.
+            </p>
+          </article>
+          
+          <article className="surface-panel p-8">
+            <h3 className="heading-xl text-2xl">Our Vision</h3>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              To lead the global diamond industry into a more sustainable,
+              transparent, and technologically advanced future, setting the new
+              benchmark for quality and ethical practices.
+            </p>
+          </article>
         </div>
       </Section>
 
@@ -95,6 +113,20 @@ function About() {
               title: "World : The Logistics Hub",
               body: "Our World office serves as our primary international sales and logistics center. Its strategic location ensures efficient, secure, and timely delivery to all major global markets.",
             },
+            {
+              img: IMG.surat,
+              alt: "A cityscape of Surat, India.",
+              region: "INDIA (Manufacturing & HQ)",
+              title: "Surat: The Manufacturing Core",
+              body: "Our state-of-the-art facility is the heart of our operation. This is where our R&D, diamond growth (CVD/HPHT), and precision cutting and polishing take place.",
+            },
+                {
+              img: IMG.surat,
+              alt: "A cityscape of Surat, India.",
+              region: "INDIA (Manufacturing & HQ)",
+              title: "Surat: The Manufacturing Core",
+              body: "Our state-of-the-art facility is the heart of our operation. This is where our R&D, diamond growth (CVD/HPHT), and precision cutting and polishing take place.",
+            }
           ].map((o) => (
             <article
               key={o.region}

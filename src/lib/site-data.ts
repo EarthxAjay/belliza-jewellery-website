@@ -1,5 +1,7 @@
 export const IMG = {
-  hero: "https://firebasestorage.googleapis.com/v0/b/cvdone-portal.firebasestorage.app/o/NavkarWebsite%2FHome%20page%20Image.png?alt=media&token=979849b9-0111-43a8-b379-ed7583d1e3ae",
+   hero: "https://firebasestorage.googleapis.com/v0/b/cvdone-portal.firebasestorage.app/o/NavkarWebsite%2FHome%20page%20Image.png?alt=media&token=979849b9-0111-43a8-b379-ed7583d1e3ae",
+
+   
   surat:
     "https://firebasestorage.googleapis.com/v0/b/cvdone-portal.firebasestorage.app/o/NavkarWebsite%2Fabout_Surat.png?alt=media&token=253902af-699d-4a95-b10f-8229beb0b51a",
   hongKong:
@@ -18,7 +20,8 @@ export const IMG = {
     "https://firebasestorage.googleapis.com/v0/b/cvdone-portal.firebasestorage.app/o/NavkarWebsite%2Fbespoke_custom_diamond.png?alt=media&token=09f6202f-9ce4-445d-bc30-e2eb75b50df3",
   bespokeJewellery:
     "https://firebasestorage.googleapis.com/v0/b/cvdone-portal.firebasestorage.app/o/NavkarWebsite%2Fbespoke_jewellery.png?alt=media&token=c51c5669-8154-4dcf-8f6b-fd13e479d985",
-  eco: "https://images.unsplash.com/photo-1655300256620-680cb0f1cec3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxzb2xhciUyMHBvd2VyZWR8ZW58MHx8fHwxNzYxODA2MjkxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+  
+    eco: "https://images.unsplash.com/photo-1655300256620-680cb0f1cec3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxzb2xhciUyMHBvd2VyZWR8ZW58MHx8fHwxNzYxODA2MjkxfDA&ixlib=rb-4.1.0&q=80&w=1080",
   newsHK:
     "https://firebasestorage.googleapis.com/v0/b/cvdone-portal.firebasestorage.app/o/NavkarWebsite%2Fnews_HKshow.png?alt=media&token=712b3243-3aa2-43fa-a659-a66baefd9eb9",
   news50ct:
@@ -70,6 +73,7 @@ export const CONTACT = {
       "BELLIZA GEMS & JEWELS, BLOCK NO 12, 1 st FLOOR, BACK SIDE MOHANNAGER, 18 GALA, L.H ROAD, VARACHHA, SURAT, GUJARAT, 395006 INDIA",
     whatsapp: "+91 7861889797",
     whatsappHref: "https://wa.me/+917861889797",
+    instagram: "https://www.instagram.com/aurajewelerr/",
     email: "aurajewelerr@gmail.com",
   },
   mumbai : {
