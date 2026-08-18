@@ -26,11 +26,36 @@ export const Route = createFileRoute("/contact")({
 });
 
 const FIELDS = [
-  { name: "fullName", label: "Full Name", type: "text", required: true },
-  { name: "company", label: "Company Name", type: "text", required: true },
-  { name: "email", label: "Email", type: "email", required: true },
-  { name: "phone", label: "Phone Number", type: "tel", required: false },
-  { name: "country", label: "Country", type: "text", required: false },
+  {
+    name: "fullName",
+    label: "Full Name",
+    type: "text",
+    required: true,
+  },
+  {
+    name: "company",
+    label: "Company Name",
+    type: "text",
+    required: true,
+  },
+  {
+    name: "email",
+    label: "Email",
+    type: "email",
+    required: true,
+  },
+  {
+    name: "phone",
+    label: "Phone Number",
+    type: "tel",
+    required: false,
+  },
+  {
+    name: "country",
+    label: "Country",
+    type: "text",
+    required: false,
+  },
 ] as const;
 
 const inputClass =
@@ -42,27 +67,56 @@ function Contact() {
   return (
     <>
       <PageHero
-        title="Partner With The Source."
-        subtitle="Reach out to our global team today. We are ready to support your business."
+        title="Your Global Partner in Diamonds & Jewellery"
+        subtitle="it immediately communicates that Belliza is positioned as an international B2B brand, rather than just a local manufacturer. This can help attract clients from around the world who are looking for a reliable and professional partner in the diamond and jewellery industry."
       />
 
       <Section>
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
           <div className="surface-panel p-8">
             <h2 className="heading-xl text-2xl">Send a Message</h2>
+
             <form
               className="mt-8 space-y-5"
-              onSubmit={(e) => {
+              onSubmit={async (e) => {
                 e.preventDefault();
+
                 setSending(true);
+
                 const form = e.currentTarget;
-                setTimeout(() => {
-                  setSending(false);
+
+                try {
+                  const response = await fetch(
+                    "https://formspree.io/f/myegbjey",
+                    {
+                      method: "POST",
+                      body: new FormData(form),
+                      headers: {
+                        Accept: "application/json",
+                      },
+                    }
+                  );
+
+                  if (!response.ok) {
+                    throw new Error("Failed to send message");
+                  }
+
                   form.reset();
+
                   toast.success("Message sent", {
-                    description: "Our team will get back to you shortly.",
+                    description:
+                      "Thank you. Our team will get back to you shortly.",
                   });
-                }, 600);
+                } catch (error) {
+                  console.error("Contact form error:", error);
+
+                  toast.error("Message failed", {
+                    description:
+                      "Please try again or contact us directly by WhatsApp or email.",
+                  });
+                } finally {
+                  setSending(false);
+                }
               }}
             >
               {FIELDS.map((f) => (
@@ -73,6 +127,7 @@ function Contact() {
                   >
                     {f.label}
                   </label>
+
                   <input
                     id={f.name}
                     name={f.name}
@@ -82,6 +137,7 @@ function Contact() {
                   />
                 </div>
               ))}
+
               <div>
                 <label
                   htmlFor="message"
@@ -89,6 +145,7 @@ function Contact() {
                 >
                   Message
                 </label>
+
                 <textarea
                   id="message"
                   name="message"
@@ -97,6 +154,7 @@ function Contact() {
                   className={inputClass}
                 />
               </div>
+
               <button
                 type="submit"
                 disabled={sending}
@@ -109,22 +167,33 @@ function Contact() {
 
           <div className="space-y-6">
             {[CONTACT.india, CONTACT.mumbai].map((office) => (
-              <article key={office.title} className="surface-panel p-8">
-                <h3 className="heading-xl text-xl">{office.title}</h3>
+              <article
+                key={office.title}
+                className="surface-panel p-8"
+              >
+                <h3 className="heading-xl text-xl">
+                  {office.title}
+                </h3>
+
                 <p className="mt-3 text-sm text-muted-foreground">
                   {office.blurb}
                 </p>
+
                 <ul className="mt-6 space-y-4 text-sm text-muted-foreground">
                   <li className="flex gap-3">
                     <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+
                     <span>{office.address}</span>
                   </li>
+
                   <li className="flex gap-3">
                     <MessageCircle className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+
                     <span>
                       <span className="font-semibold text-foreground">
                         WhatsApp:{" "}
                       </span>
+
                       <a
                         href={office.whatsappHref}
                         target="_blank"
@@ -135,12 +204,15 @@ function Contact() {
                       </a>
                     </span>
                   </li>
+
                   <li className="flex gap-3">
                     <Mail className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+
                     <span>
                       <span className="font-semibold text-foreground">
                         Email:{" "}
                       </span>
+
                       <a
                         href={`mailto:${office.email}`}
                         className="transition-colors hover:text-foreground"
@@ -158,3 +230,4 @@ function Contact() {
     </>
   );
 }
+
