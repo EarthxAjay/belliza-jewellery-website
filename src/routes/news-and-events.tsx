@@ -42,7 +42,7 @@ const POSTS = [
     body: "Our Surat R&D and manufacturing teams have successfully produced a remarkable 50.02-carat, Intense Pink VS1 (Type IIa) CVD diamond. This stone represents a new benchmark in our large-carat production, demonstrating our complete mastery of the CVD process and our unique capacity to fulfill high-value, bespoke orders.",
   },
   {
-    img: IMG.newsPinks,
+    img: IMG.news50ct,
     alt: "An arrangement of several vivid pink diamonds.",
     date: "September 5, 2023",
     title:
@@ -64,13 +64,13 @@ const POSTS = [
     title: "Belliza Innovates with Advanced Custom-Shape Diamond Capabilities",
     body: "Our manufacturing excellence now extends to bespoke solutions. We have enhanced our laser-cutting and planning technology to partner with designers and brands on proprietary, custom-cut diamonds. From unique shapes to exclusive faceting patterns, our Surat facility can now bring your most complex visions to life.",
   },
-  // {
-  //   img: IMG.newsCvdOne,
-  //   alt: "A laptop screen showing a B2B portal login page.",
-  //   date: "October 30, 2025",
-  //   title: "Belliza Gems & Jewels Launches Globally, Our Exclusive Inventory On Website",
-  //   body: "To better serve our global partners, we have launched cvd.one, our exclusive B2B inventory portal. Powered by Belliza Gems, this platform provides our registered clients with 24/7 access to our live inventory of over 150,000 certified diamonds, streamlining the sourcing and ordering process for our valued partners.",
-  // },
+  {
+    img: IMG.newsCvdOne,
+    alt: "A laptop screen showing a B2B portal login page.",
+    date: "October 30, 2025",
+    title: "Belliza Gems & Jewels Launches Globally, Our Exclusive Inventory On Website",
+    body: "To better serve our global partners, we have launched cvd.one, our exclusive B2B inventory portal. Powered by Belliza Gems, this platform provides our registered clients with 24/7 access to our live inventory of over 150,000 certified diamonds, streamlining the sourcing and ordering process for our valued partners.",
+  },
 ];
 
 const SHOWS = [

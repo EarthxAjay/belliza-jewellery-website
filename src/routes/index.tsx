@@ -3,6 +3,11 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import { ALLIANCES, IMG } from "@/lib/site-data";
 import { Section } from "@/components/site/Sections";
+
+// Belliza luxury palette:
+// Ivory #F8F6F1 · Warm White #FCFBF8 · Champagne Gold #B08D57
+// Deep Brown #332E27 · Muted Taupe #756E63 · Sand #EFE9DE
+// Soft Border #E5DED0 · Warm Panel #F3EFE7
 import {
   Reveal,
   StaggerGroup,
@@ -92,69 +97,411 @@ function Home() {
 
   return (
     <>
-      <section
-        ref={heroRef}
-        className="relative flex min-h-screen items-center justify-center overflow-hidden px-6"
+ 
+ {/* =========================================================
+    SECTION 01  — HERO 
+========================================================= */}
+
+
+<section
+  ref={heroRef}
+  className="relative flex min-h-screen items-center justify-center overflow-hidden px-6"
+>
+  {/* HERO BACKGROUND */}
+  <motion.img
+    src={IMG.hero}
+    alt="Belliza diamonds and fine jewellery"
+    style={{ y: bgY, scale: bgScale }}
+    className="absolute inset-0 h-full w-full object-cover"
+  />
+
+  {/* LUXURY OVERLAY */}
+  <motion.div
+    className="absolute inset-0 bg-[#F8F6F1]/72"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 1.2 }}
+  />
+
+  {/* HERO CONTENT */}
+  <motion.div
+    style={{ y: contentY, opacity: contentOpacity }}
+    className="relative mx-auto max-w-5xl text-center"
+  >
+    {/* EYEBROW */}
+    <motion.p
+      className="text-xs font-medium uppercase tracking-[0.28em] text-[#B08D57] sm:text-sm"
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+    >
+      The Source Behind Exceptional Diamonds &amp; Jewellery
+    </motion.p>
+
+    {/* MAIN HEADING */}
+    <h1 className="heading-xl mt-6 text-4xl sm:text-6xl lg:text-7xl">
+      <WordsReveal text="Exceptional Diamonds. Fine Jewellery. From the Source." />
+    </h1>
+
+    {/* PRIMARY DESCRIPTION */}
+    <motion.p
+      className="mx-auto mt-8 max-w-3xl text-base leading-relaxed text-[#4A443B]/85 sm:text-lg"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.9,
+        delay: 0.7,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+    >
+      Belliza is a global diamond and jewellery partner, combining advanced
+      technology, precision manufacturing, fine craftsmanship, and bespoke
+      sourcing solutions to deliver exceptional diamonds and jewellery to
+      brands, businesses, traders, and discerning customers across
+      international markets.
+    </motion.p>
+
+    {/* SECONDARY DESCRIPTION */}
+    <motion.p
+      className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-[#5F584E] sm:text-base"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.9,
+        delay: 0.9,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+    >
+      From the first cut to the final creation, every piece is guided by
+      precision, quality, transparency, and craftsmanship.
+    </motion.p>
+
+    {/* CTA BUTTONS */}
+    <motion.div
+      className="mt-9 flex flex-wrap items-center justify-center gap-4"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.9,
+        delay: 1.1,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+    >
+      <Link
+        to="/products"
+        className="inline-block rounded-full border border-[#E5DED0] px-7 py-3 text-sm font-medium text-[#332E27] transition-all duration-300 hover:scale-[1.03] hover:bg-[#EFE9DE]"
       >
-        <motion.img
-          src={IMG.hero}
-          alt="Homepage hero background image."
-          style={{ y: bgY, scale: bgScale }}
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        <motion.div
-          className="absolute inset-0 bg-[color-mix(in_oklab,var(--color-background)_72%,transparent)]"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.2 }}
-        />
-        <motion.div
-          style={{ y: contentY, opacity: contentOpacity }}
-          className="relative mx-auto max-w-4xl text-center"
-        >
-          <h1 className="heading-xl text-4xl sm:text-6xl lg:text-7xl">
-            <WordsReveal text="The Source for Precision-Engineered Lab-Grown Diamonds." />
-          </h1>
-          <motion.p
-            className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-foreground/80 sm:text-lg"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          >
-            Belliza Gems &amp; Jewels: A global leader in advanced CVD &amp; HPHT
-            manufacturing, powering the world&rsquo;s most trusted jewellery
-            partners.
-          </motion.p>
-        </motion.div>
+        Explore Diamonds
+      </Link>
 
-        <motion.div
-          className="absolute bottom-10 left-1/2 h-12 w-[1px] -translate-x-1/2 bg-gradient-to-b from-transparent via-foreground/50 to-transparent"
-          animate={{ opacity: [0.2, 1, 0.2], scaleY: [0.6, 1, 0.6] }}
-          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
-        />
-      </section>
+      <Link
+         to="/products"
+        className="inline-block rounded-full border border-[#E5DED0] px-7 py-3 text-sm font-medium text-[#332E27] transition-all duration-300 hover:scale-[1.03] hover:bg-[#EFE9DE]"
+      >
+        Explore Jewellery
+      </Link>
+    </motion.div>
 
-      <Section>
-        <StaggerGroup className="grid gap-6 lg:grid-cols-3">
-          {PILLARS.map((p) => (
-            <StaggerItem key={p.title} className="surface-panel p-8">
-              <h2 className="heading-xl text-2xl">{p.title}</h2>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                {p.body}
-              </p>
-            </StaggerItem>
-          ))}
-        </StaggerGroup>
-      </Section>
+    {/* BRAND CAPABILITIES */}
+    <motion.p
+      className="mt-8 text-[10px] font-medium uppercase tracking-[0.18em] text-[#756E63] sm:text-xs"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.9, delay: 1.35 }}
+    >
+      Advanced Technology · Precision Manufacturing · Diamond Expertise ·
+      Fine Jewellery · Global Partnerships
+    </motion.p>
+  </motion.div>
 
-      <Section className="border-y border-border bg-[color-mix(in_oklab,var(--color-surface)_50%,transparent)]">
+  {/* SCROLL INDICATOR */}
+  <motion.div
+    className="absolute bottom-10 left-1/2 h-12 w-[1px] -translate-x-1/2 bg-gradient-to-b from-transparent via-foreground/50 to-transparent"
+    animate={{
+      opacity: [0.2, 1, 0.2],
+      scaleY: [0.6, 1, 0.6],
+    }}
+    transition={{
+      duration: 2.4,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+  />
+</section>
+
+
+
+{/* =========================================================
+    SECTION 02 — WHO WE SERVE
+========================================================= */}
+
+<Section className="border-y border-[#E5DED0] bg-[#F3EFE7]">
+  <Reveal className="mx-auto max-w-5xl text-center">
+
+    {/* HEADING */}
+    <h2 className="heading-xl text-3xl sm:text-5xl lg:text-6xl">
+      One Source. Every Customer.
+    </h2>
+
+    {/* DESCRIPTION */}
+    <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-[#756E63] sm:text-lg">
+      From a single diamond to larger business requirements, Belliza provides
+      trusted sourcing, manufacturing, and jewellery solutions for customers
+      across the global diamond and jewellery industry.
+    </p>
+  </Reveal>
+
+  {/* CUSTOMER TYPES */}
+  <StaggerGroup className="mx-auto mt-10 grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {[
+      {
+        title: "B2B Brands",
+        subtitle: "BRANDS",
+        description:
+          "Reliable diamond and jewellery supply for established and emerging brands seeking quality, consistency, and scalable solutions.",
+      },
+      {
+        title: "B2C Customers",
+        subtitle: "INDIVIDUALS",
+        description:
+          "Exceptional diamonds and fine jewellery for individual customers seeking quality, craftsmanship, and a trusted source.",
+      },
+      {
+        title: "Traders & Retailers",
+        subtitle: "TRADE",
+        description:
+          "Flexible sourcing and dependable supply for diamond traders, retailers, and businesses serving diverse customer requirements.",
+      },
+      {
+        title: "Jewellers & Designers",
+        subtitle: "CREATIVE PARTNERS",
+        description:
+          "Precision diamonds, bespoke sourcing, and jewellery solutions designed to support distinctive collections and creations.",
+      },
+    ].map((item, index) => (
+    <StaggerItem
+  key={item.title}
+  className="group rounded-2xl border border-[#E5DED0] bg-[#FCFBF8] px-6 py-7 text-center transition-all duration-500 hover:-translate-y-1 hover:border-[#B08D57]/50 hover:bg-[#B08D57]/5 hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] sm:px-7 sm:py-8"
+>
+        {/* CATEGORY */}
+        <p className="mt-3 text-[9px] font-medium uppercase tracking-[0.2em] text-[#756E63]">
+          {item.subtitle}
+        </p>
+
+        {/* TITLE */}
+        <h3 className="heading-xl mt-2 text-xl sm:text-2xl">
+          {item.title}
+        </h3>
+
+        {/* DESCRIPTION */}
+        <p className="mt-3 text-sm leading-6 text-[#756E63]">
+          {item.description}
+        </p>
+      </StaggerItem>
+    ))}
+  </StaggerGroup>
+
+  {/* BOTTOM STATEMENT */}
+  <Reveal className="mx-auto mt-8 max-w-3xl text-center">
+    <p className="text-xs font-medium uppercase tracking-[0.16em] text-[#756E63] sm:text-sm">
+      One Source · Multiple Markets · Global Possibilities
+    </p>
+  </Reveal>
+</Section>
+
+
+{/* =========================================================
+    SECTION 03 — WHAT WE OFFER
+========================================================= */}
+
+<Section>
+  <Reveal className="mx-auto max-w-5xl text-center">
+
+    {/* EYEBROW */}
+    <p className="text-xs font-medium uppercase tracking-[0.28em] text-[#B08D57] sm:text-sm">
+      What We Offer
+    </p>
+
+    {/* HEADING */}
+    <h2 className="heading-xl mt-5 text-3xl sm:text-5xl lg:text-6xl">
+      One Source. Three Ways to Create.
+    </h2>
+
+    {/* DESCRIPTION */}
+    <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-[#756E63] sm:text-lg">
+      From precision-manufactured diamonds to finished jewellery and
+      tailored production, Belliza brings sourcing, technology, and
+      craftsmanship together under one global platform.
+    </p>
+  </Reveal>
+
+  {/* OFFER CARDS */}
+  <StaggerGroup className="mx-auto mt-10 grid max-w-6xl gap-4 md:grid-cols-3">
+
+    {/* DIAMONDS */}
+    <StaggerItem
+      className="group rounded-2xl border border-[#E5DED0] bg-[#FCFBF8] p-7 transition-all duration-500 hover:-translate-y-1 hover:border-[#B08D57]/50 hover:bg-[#B08D57]/5 hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] sm:p-8"
+    >
+      <div className="flex items-center justify-between">
+        <span className="text-xs uppercase tracking-[0.18em] text-[#756E63]">
+          Source
+        </span>
+      </div>
+
+      <h3 className="heading-xl mt-8 text-2xl sm:text-3xl">
+        Diamonds
+      </h3>
+
+      <p className="mt-3 text-sm leading-relaxed text-[#756E63]">
+        Precision-manufactured diamonds for jewellery brands, traders,
+        retailers, and individual requirements.
+      </p>
+
+      <div className="mt-7 space-y-2 border-t border-[#E5DED0] pt-5 text-left">
+        <p className="text-sm">Lab-Grown Diamonds</p>
+        <p className="text-sm">Real Diamonds</p>
+        <p className="text-sm">Loose Diamonds</p>
+        <p className="text-sm">Certified Stones</p> 
+        <p className="text-sm">BELLIZA SIGNATURE CRAFT DIAMONDS</p>
+      </div>
+    </StaggerItem>
+
+    {/* JEWELLERY */}
+    <StaggerItem
+      className="group rounded-2xl border border-[#E5DED0] bg-[#FCFBF8] p-7 transition-all duration-500 hover:-translate-y-1 hover:border-[#B08D57]/50 hover:bg-[#B08D57]/5 hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] sm:p-8"
+    >
+      <div className="flex items-center justify-between">
+
+        <span className="text-xs uppercase tracking-[0.18em] text-[#756E63]">
+          Craft
+        </span>
+      </div>
+
+      <h3 className="heading-xl mt-8 text-2xl sm:text-3xl">
+        Jewellery
+      </h3>
+
+      <p className="mt-3 text-sm leading-relaxed text-[#756E63]">
+        Fine jewellery created with carefully selected diamonds,
+        refined craftsmanship, and attention to detail.
+      </p>
+
+      <div className="mt-7 space-y-2 border-t border-[#E5DED0] pt-5 text-left">
+        <p className="text-sm">Rings</p>
+        <p className="text-sm">Earrings</p>
+        <p className="text-sm">Pendants</p>
+        <p className="text-sm">Bracelets</p>
+         <p className="text-sm">BELLIZA SIGNATURE CRAFT JEWELRY</p>
+      </div>
+    </StaggerItem>
+
+    {/* CUSTOM ORDERS */}
+    <StaggerItem
+      className="group rounded-2xl border border-[#E5DED0] bg-[#FCFBF8] p-7 transition-all duration-500 hover:-translate-y-1 hover:border-[#B08D57]/50 hover:bg-[#B08D57]/5 hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] sm:p-8"
+    >
+      <div className="flex items-center justify-between"> 
+
+        <span className="text-xs uppercase tracking-[0.18em] text-[#756E63]">
+          Bespoke
+        </span>
+      </div>
+
+      <h3 className="heading-xl mt-8 text-2xl sm:text-3xl">
+        Custom Orders
+      </h3>
+
+      <p className="mt-3 text-sm leading-relaxed text-[#756E63]">
+        From your concept to final production, we provide tailored
+        sourcing and manufacturing solutions for unique requirements.
+      </p>
+
+      <div className="mt-7 space-y-2 border-t border-[#E5DED0] pt-5 text-left">
+        <p className="text-sm">Your Design</p>
+        <p className="text-sm">Our Supply</p>
+        <p className="text-sm">Custom Specifications</p>
+        <p className="text-sm">Production Support</p>
+        <p className="text-sm">BELLIZA SIGNATURE CRAFT PEACES</p>
+      </div>
+    </StaggerItem>
+
+  </StaggerGroup>
+</Section>
+
+
+{/* =========================================================
+    SECTION 04 — TRUST & SCALE
+========================================================= */}
+
+{/* SECTION 04 — TRUST & SCALE */}
+<Section className="!mt-0 !mb-0 !py-15 sm:!py-15 bg-[#F8F6F1]">
+  <StaggerGroup className="mx-auto grid max-w-7xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+
+    {/* DIAMONDS SUPPLIED */}
+    <StaggerItem
+      className="group rounded-2xl border border-[#E5DED0] bg-[#FCFBF8] px-8 py-16 text-center transition-all duration-500 hover:-translate-y-1 hover:border-[#B08D57]/50 hover:bg-[#B08D57]/5 hover:shadow-[0_12px_35px_rgba(0,0,0,0.06)]"
+    >
+      <p className="text-3xl font-semibold tracking-tight sm:text-4xl">
+        1 Cr+
+      </p>
+
+      <h3 className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.14em]">
+        Diamonds Supplied
+      </h3>
+    </StaggerItem>
+
+    {/* CUSTOMERS SERVED */}
+    <StaggerItem
+      className="group rounded-2xl border border-[#E5DED0] bg-[#FCFBF8] px-8 py-16 text-center transition-all duration-500 hover:-translate-y-1 hover:border-[#B08D57]/50 hover:bg-[#B08D57]/5 hover:shadow-[0_12px_35px_rgba(0,0,0,0.06)]"
+    >
+      <p className="text-3xl font-semibold tracking-tight sm:text-4xl">
+        1 Lakh+
+      </p>
+
+      <h3 className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.14em]">
+        Customers Served
+      </h3>
+    </StaggerItem>
+
+    {/* GLOBAL SUPPLY */}
+    <StaggerItem
+      className="group rounded-2xl border border-[#E5DED0] bg-[#FCFBF8] px-8 py-16 text-center transition-all duration-500 hover:-translate-y-1 hover:border-[#B08D57]/50 hover:bg-[#B08D57]/5 hover:shadow-[0_12px_35px_rgba(0,0,0,0.06)]"
+    >
+      <p className="text-3xl font-semibold tracking-tight sm:text-4xl">
+        Global
+      </p>
+
+      <h3 className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.14em]">
+        Supply Network
+      </h3>
+    </StaggerItem>
+
+    {/* IGI OPTIONS */}
+    <StaggerItem
+      className="group rounded-2xl border border-[#E5DED0] bg-[#FCFBF8] px-8 py-16 text-center transition-all duration-500 hover:-translate-y-1 hover:border-[#B08D57]/50 hover:bg-[#B08D57]/5 hover:shadow-[0_12px_35px_rgba(0,0,0,0.06)]"
+    >
+      <p className="text-3xl font-semibold tracking-tight sm:text-4xl">
+        IGI
+      </p>
+
+      <h3 className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.14em]">
+        Certification Options
+      </h3>
+    </StaggerItem>
+
+  </StaggerGroup>
+</Section>
+
+{/* =========================================================
+    SECTION 05 — Exceptional Diamonds. Refined Craftsmanship.
+========================================================= */}
+
+ <Section className="border-y border-[#E5DED0] bg-[#F6F2EA]">
         <Reveal className="mx-auto max-w-3xl text-center">
           <h2 className="heading-xl text-3xl sm:text-5xl">
-            The New Standard in Diamond Supply.
+            Exceptional Diamonds. Refined Craftsmanship.
           </h2>
-          <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-            Discover how our manufacturing excellence and direct-from-source
-            model can become your strategic advantage.
+          <p className="mt-6 text-base leading-relaxed text-[#756E63]">
+          From sourcing to manufacturing, Belliza provides dependable diamond and jewellery solutions tailored to businesses globally.
           </p>
           <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
             <motion.div
@@ -164,7 +511,7 @@ function Home() {
             >
               <Link
                 to="/manufacturing"
-                className="inline-block rounded-full bg-primary px-7 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+                className="inline-block rounded-full bg-[#B08D57] px-7 py-3 text-sm font-medium text-[#FFFDF8] transition-opacity hover:opacity-90"
               >
                 Explore Our Manufacturing
               </Link>
@@ -176,53 +523,437 @@ function Home() {
             >
               <Link
                 to="/products"
-                className="inline-block rounded-full border border-border px-7 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+                className="inline-block rounded-full border border-[#E5DED0] px-7 py-3 text-sm font-medium text-[#332E27] transition-colors hover:bg-[#EFE9DE]"
               >
-                View Our Product Range
+                Explore Our Craftsmanship
               </Link>
             </motion.div>
           </div>
         </Reveal>
       </Section>
 
-      <Section>
-        <Reveal>
-          <h2 className="heading-xl text-center text-3xl sm:text-4xl">
-            What Our Partners Say
-          </h2>
-        </Reveal>
-        <StaggerGroup className="mt-14 grid gap-6 lg:grid-cols-3">
-          {TESTIMONIALS.map((t) => (
-            <StaggerItem
-              key={t.name}
-              className="surface-panel flex flex-col p-8"
-            >
-              <blockquote className="text-sm leading-relaxed text-foreground/85">
-                &ldquo;{t.quote}&rdquo;
-              </blockquote>
-              <figcaption className="mt-8 flex items-center gap-4">
-                <img
-                  src={t.avatar}
-                  alt={`Portrait of ${t.name}`}
-                  loading="lazy"
-                  className="h-12 w-12 rounded-full object-cover"
-                />
-                <div>
-                  <p className="text-sm font-semibold">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.role}</p>
-                </div>
-              </figcaption>
-            </StaggerItem>
-          ))}
-        </StaggerGroup>
-      </Section>
+{/* =========================================================
+    SECTION 06 — WHY BELLIZA
+========================================================= */}
 
-      <Section className="border-t border-border">
+<Section className="border-y border-[#E5DED0] bg-[#FCFBF8]">
+
+  {/* HEADER */}
+  <Reveal className="mx-auto max-w-5xl text-center">
+
+    <p className="text-xs font-medium uppercase tracking-[0.28em] text-[#B08D57] sm:text-sm">
+      Why Belliza
+    </p>
+
+    <h2 className="heading-xl mt-5 text-3xl sm:text-5xl lg:text-6xl">
+      The Advantage of the Source.
+    </h2>
+
+    <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-[#756E63] sm:text-lg">
+      Manufacturing expertise combined with flexible sourcing, quality
+      control, and dependable service for individual and business
+      requirements worldwide.
+    </p>
+  </Reveal>
+
+  {/* ADVANTAGES */}
+  <StaggerGroup className="mx-auto mt-12 grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
+
+    {/* DIRECT MANUFACTURING */}
+    <StaggerItem
+      className="group rounded-2xl border border-[#E5DED0] bg-[#FCFBF8] p-7 transition-all duration-500 hover:-translate-y-1 hover:border-[#B08D57]/50 hover:bg-[#B08D57]/5 hover:shadow-[0_14px_40px_rgba(0,0,0,0.06)] sm:p-8"
+    >
+      <span className="text-2xl font-light text-[#B08D57]">01</span>
+
+      <h3 className="heading-xl mt-6 text-xl sm:text-2xl">
+        Direct Manufacturing
+      </h3>
+
+      <p className="mt-3 text-sm leading-6 text-[#756E63]">
+        Direct access to manufacturing capabilities enables greater control
+        over quality, specifications, production, and supply.
+      </p>
+    </StaggerItem>
+
+    {/* FLEXIBLE SPECIFICATIONS */}
+    <StaggerItem
+      className="group rounded-2xl border border-[#E5DED0] bg-[#FCFBF8] p-7 transition-all duration-500 hover:-translate-y-1 hover:border-[#B08D57]/50 hover:bg-[#B08D57]/5 hover:shadow-[0_14px_40px_rgba(0,0,0,0.06)] sm:p-8"
+    >
+      <span className="text-2xl font-light text-[#B08D57]">02</span>
+
+      <h3 className="heading-xl mt-6 text-xl sm:text-2xl">
+        Flexible Specifications
+      </h3>
+
+      <p className="mt-3 text-sm leading-6 text-[#756E63]">
+        From individual stones to larger requirements, specifications can be
+        aligned with your product, design, and sourcing needs.
+      </p>
+    </StaggerItem>
+
+    {/* QUALITY CONTROL */}
+    <StaggerItem
+      className="group rounded-2xl border border-[#E5DED0] bg-[#FCFBF8] p-7 transition-all duration-500 hover:-translate-y-1 hover:border-[#B08D57]/50 hover:bg-[#B08D57]/5 hover:shadow-[0_14px_40px_rgba(0,0,0,0.06)] sm:p-8"
+    >
+      <span className="text-2xl font-light text-[#B08D57]">03</span>
+
+      <h3 className="heading-xl mt-6 text-xl sm:text-2xl">
+        Quality Control
+      </h3>
+
+      <p className="mt-3 text-sm leading-6 text-[#756E63]">
+        Attention to precision, consistency, finishing, and specifications
+        helps maintain dependable quality across every requirement.
+      </p>
+    </StaggerItem>
+
+    {/* GLOBAL SUPPLY */}
+    <StaggerItem
+      className="group rounded-2xl border border-[#E5DED0] bg-[#FCFBF8] p-7 transition-all duration-500 hover:-translate-y-1 hover:border-[#B08D57]/50 hover:bg-[#B08D57]/5 hover:shadow-[0_14px_40px_rgba(0,0,0,0.06)] sm:p-8"
+    >
+      <span className="text-2xl font-light text-[#B08D57]">04</span>
+
+      <h3 className="heading-xl mt-6 text-xl sm:text-2xl">
+        Global Supply
+      </h3>
+
+      <p className="mt-3 text-sm leading-6 text-[#756E63]">
+        Supporting customers across international markets with dependable
+        sourcing and supply solutions.
+      </p>
+    </StaggerItem>
+
+    {/* RELIABLE SERVICE */}
+    <StaggerItem
+      className="group rounded-2xl border border-[#E5DED0] bg-[#FCFBF8] p-7 transition-all duration-500 hover:-translate-y-1 hover:border-[#B08D57]/50 hover:bg-[#B08D57]/5 hover:shadow-[0_14px_40px_rgba(0,0,0,0.06)] sm:p-8"
+    >
+      <span className="text-2xl font-light text-[#B08D57]">05</span>
+
+      <h3 className="heading-xl mt-6 text-xl sm:text-2xl">
+        Reliable Service
+      </h3>
+
+      <p className="mt-3 text-sm leading-6 text-[#756E63]">
+        Clear communication, responsive support, and practical solutions
+        throughout the sourcing and supply process.
+      </p>
+    </StaggerItem>
+
+    {/* LONG-TERM PARTNERSHIP */}
+    <StaggerItem
+      className="group rounded-2xl border border-[#E5DED0] bg-[#FCFBF8] p-7 transition-all duration-500 hover:-translate-y-1 hover:border-[#B08D57]/50 hover:bg-[#B08D57]/5 hover:shadow-[0_14px_40px_rgba(0,0,0,0.06)] sm:p-8"
+    >
+      <span className="text-2xl font-light text-[#B08D57]">06</span>
+
+      <h3 className="heading-xl mt-6 text-xl sm:text-2xl">
+        Long-Term Partnership
+      </h3>
+
+      <p className="mt-3 text-sm leading-6 text-[#756E63]">
+        Built around consistency, trust, transparent communication, and
+        relationships designed to grow over time.
+      </p>
+    </StaggerItem>
+
+  </StaggerGroup>
+
+  {/* CLOSING STATEMENT */}
+  <Reveal className="mx-auto mt-12 max-w-3xl text-center">
+
+    <div className="mx-auto h-px w-16 bg-[#B08D57]/40" />
+
+    <p className="mt-6 text-sm font-medium uppercase tracking-[0.18em] text-[#5F584E] sm:text-base">
+     · Manufacturing Expertise · Flexible Sourcing · Global Partnership
+    </p>
+
+  </Reveal>
+
+</Section>
+
+{/* =========================================================
+    SECTION 07 — reviews
+========================================================= */}
+
+     {/* =========================================================
+    CLIENT STORIES / CUSTOMER REVIEWS
+========================================================= */}
+<Section className="border-y border-[#E5DED0] bg-[#F8F6F1]">
+
+  {/* HEADER */}
+  <Reveal className="mx-auto max-w-4xl text-center">
+
+    <p className="text-xs font-medium uppercase tracking-[0.28em] text-[#B08D57] sm:text-sm">
+      Client Stories
+    </p>
+
+    <h2 className="heading-xl mt-5 text-3xl sm:text-5xl lg:text-6xl">
+      Trusted by Jewellery Professionals.
+    </h2>
+
+    <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-[#756E63] sm:text-lg">
+      From diamond sourcing to finished jewellery, our clients choose
+      Belliza for precision, reliability, and a dependable global supply
+      partnership.
+    </p>
+
+  </Reveal>
+
+
+  {/* REVIEWS + VIDEO */}
+  <StaggerGroup className="mx-auto mt-12 grid max-w-7xl gap-5 lg:grid-cols-3">
+
+    {/* REVIEW 01 */}
+    <StaggerItem
+      className="group flex flex-col rounded-2xl border border-[#E5DED0] bg-[#FCFBF8] p-7 transition-all duration-500 hover:-translate-y-1 hover:border-[#B08D57]/50 hover:shadow-[0_16px_45px_rgba(0,0,0,0.07)] sm:p-8"
+    >
+
+      {/* RATING */}
+      <div className="flex items-center gap-1 text-[#B08D57]">
+        <span>★</span>
+        <span>★</span>
+        <span>★</span>
+        <span>★</span>
+        <span>★</span>
+      </div>
+
+      {/* REVIEW */}
+      <blockquote className="mt-6 text-base leading-7 text-[#403A32]/90">
+        “Belliza has been a dependable sourcing partner for our diamond
+        requirements. The consistency of quality, communication, and
+        attention to specifications makes the process extremely smooth.”
+      </blockquote>
+
+      {/* CUSTOMER */}
+      <div className="mt-auto flex items-center gap-4 border-t border-[#E5DED0] pt-7">
+
+        <img
+          src="/images/reviews/client-01.jpg"
+          alt="Client testimonial"
+          loading="lazy"
+          className="h-12 w-12 rounded-full object-cover ring-1 ring-border"
+        />
+
+        <div>
+          <p className="text-sm font-semibold">
+            Client Name
+          </p>
+
+          <p className="mt-1 text-xs text-[#756E63]">
+            Jewellery Brand · United Kingdom
+          </p>
+        </div>
+
+      </div>
+
+    </StaggerItem>
+
+
+    {/* REVIEW 02 */}
+    <StaggerItem
+      className="group flex flex-col rounded-2xl border border-[#E5DED0] bg-[#FCFBF8] p-7 transition-all duration-500 hover:-translate-y-1 hover:border-[#B08D57]/50 hover:shadow-[0_16px_45px_rgba(0,0,0,0.07)] sm:p-8"
+    >
+
+      {/* RATING */}
+      <div className="flex items-center gap-1 text-[#B08D57]">
+        <span>★</span>
+        <span>★</span>
+        <span>★</span>
+        <span>★</span>
+        <span>★</span>
+      </div>
+
+      {/* REVIEW */}
+      <blockquote className="mt-6 text-base leading-7 text-[#403A32]/90">
+        “We value Belliza for their flexibility and ability to understand
+        exact stone requirements. Their manufacturing expertise gives us
+        confidence when working on demanding jewellery projects.”
+      </blockquote>
+
+      {/* CUSTOMER */}
+      <div className="mt-auto flex items-center gap-4 border-t border-[#E5DED0] pt-7">
+
+        <img
+          src="/images/reviews/client-02.jpg"
+          alt="Client testimonial"
+          loading="lazy"
+          className="h-12 w-12 rounded-full object-cover ring-1 ring-border"
+        />
+
+        <div>
+          <p className="text-sm font-semibold">
+            Client Name
+          </p>
+
+          <p className="mt-1 text-xs text-[#756E63]">
+            Jewellery Designer · United States
+          </p>
+        </div>
+
+      </div>
+
+    </StaggerItem>
+
+
+    {/* VIDEO TESTIMONIAL */}
+    <StaggerItem
+      className="group relative min-h-[360px] overflow-hidden rounded-2xl border border-[#E5DED0] bg-black"
+    >
+
+      {/* VIDEO */}
+      <video
+        className="absolute inset-0 h-full w-full object-cover"
+        controls
+        preload="metadata"
+        poster="/images/reviews/video-poster.jpg"
+      >
+        <source
+          src="/videos/client-testimonial.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* OVERLAY LABEL */}
+      <div className="pointer-events-none absolute left-5 top-5 rounded-full border border-white/20 bg-black/40 px-4 py-2 backdrop-blur-md">
+        <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-white">
+          Client Video
+        </p>
+      </div>
+
+    </StaggerItem>
+
+  </StaggerGroup>
+
+
+  {/* SECOND ROW */}
+  <StaggerGroup className="mx-auto mt-5 grid max-w-7xl gap-5 md:grid-cols-2">
+
+    {/* REVIEW 03 */}
+    <StaggerItem
+      className="group rounded-2xl border border-[#E5DED0] bg-[#FCFBF8] p-7 transition-all duration-500 hover:-translate-y-1 hover:border-[#B08D57]/50 hover:shadow-[0_16px_45px_rgba(0,0,0,0.07)] sm:p-8"
+    >
+
+      <div className="flex items-center justify-between">
+
+        <div className="flex items-center gap-1 text-[#B08D57]">
+          <span>★</span>
+          <span>★</span>
+          <span>★</span>
+          <span>★</span>
+          <span>★</span>
+        </div>
+
+        <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#756E63]">
+          Verified Client
+        </span>
+
+      </div>
+
+      <blockquote className="mt-6 max-w-2xl text-base leading-7 text-[#403A32]/90">
+        “What stands out about Belliza is the combination of manufacturing
+        capability and personal service. We can discuss requirements
+        directly and receive solutions that work for our business.”
+      </blockquote>
+
+      <div className="mt-7 flex items-center gap-4 border-t border-[#E5DED0] pt-6">
+
+        <img
+          src="/images/reviews/client-03.jpg"
+          alt="Client testimonial"
+          loading="lazy"
+          className="h-12 w-12 rounded-full object-cover ring-1 ring-border"
+        />
+
+        <div>
+          <p className="text-sm font-semibold">
+            Client Name
+          </p>
+
+          <p className="mt-1 text-xs text-[#756E63]">
+            Diamond Trader · India
+          </p>
+        </div>
+
+      </div>
+
+    </StaggerItem>
+
+
+    {/* REVIEW 04 */}
+    <StaggerItem
+      className="group rounded-2xl border border-[#E5DED0] bg-[#FCFBF8] p-7 transition-all duration-500 hover:-translate-y-1 hover:border-[#B08D57]/50 hover:shadow-[0_16px_45px_rgba(0,0,0,0.07)] sm:p-8"
+    >
+
+      <div className="flex items-center justify-between">
+
+        <div className="flex items-center gap-1 text-[#B08D57]">
+          <span>★</span>
+          <span>★</span>
+          <span>★</span>
+          <span>★</span>
+          <span>★</span>
+        </div>
+
+        <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#756E63]">
+          Client Experience
+        </span>
+
+      </div>
+
+      <blockquote className="mt-6 max-w-2xl text-base leading-7 text-[#403A32]/90">
+        “From the first enquiry through production and delivery, the Belliza
+        team has been responsive and professional. Their ability to support
+        both individual requirements and larger orders is valuable to us.”
+      </blockquote>
+
+      <div className="mt-7 flex items-center gap-4 border-t border-[#E5DED0] pt-6">
+
+        <img
+          src="/images/reviews/client-04.jpg"
+          alt="Client testimonial"
+          loading="lazy"
+          className="h-12 w-12 rounded-full object-cover ring-1 ring-border"
+        />
+
+        <div>
+          <p className="text-sm font-semibold">
+            Client Name
+          </p>
+
+          <p className="mt-1 text-xs text-[#756E63]">
+            Jewellery Retailer · Australia
+          </p>
+        </div>
+
+      </div>
+
+    </StaggerItem>
+
+  </StaggerGroup>
+
+
+  {/* BOTTOM STATEMENT */}
+  <Reveal className="mx-auto mt-12 max-w-3xl text-center">
+
+    <div className="mx-auto h-px w-12 bg-[#B08D57]/40" />
+
+    <p className="mt-5 text-xs font-medium uppercase tracking-[0.2em] text-[#756E63] sm:text-sm">
+      Trusted Relationships · Exceptional Service · Long-Term Partnerships
+    </p>
+
+  </Reveal>
+
+</Section>
+
+
+
+
+      <Section className="border-t border-[#E5DED0]">
         <Reveal className="text-center">
           <h2 className="heading-xl text-2xl sm:text-3xl">
             Our Alliances &amp; Memberships
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-[#756E63]">
             We are proud to be associated with leading industry bodies,
             reinforcing our commitment to quality, ethics, and global trade.
           </p>
@@ -244,4 +975,3 @@ function Home() {
     </>
   );
 }
-
