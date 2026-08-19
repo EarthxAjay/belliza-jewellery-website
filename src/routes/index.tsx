@@ -42,47 +42,6 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const PILLARS = [
-  {
-    title: "Direct Manufacturer",
-    body: "From seed to stone. We are the source. Our state-of-the-art facility in Surat controls every step, ensuring unparalleled quality and supply chain integrity.",
-  },
-  {
-    title: "Unmatched Capability",
-    body: "From precision-calibrated melee to 50ct+ certified stones. Our mastery of both CVD and HPHT delivers a vast, consistent inventory of DEF white, fancy colors, and custom-cut diamonds.",
-  },
-  {
-    title: "Global B2B Partner",
-    body: "With primary manufacturing in India and a key logistics hub in Mumbai, we provide seamless, reliable service to jewellery professionals worldwide.",
-  },
-];
-
-const TESTIMONIALS = [
-  {
-    quote:
-      "Belliza's consistency and quality are unmatched. Their calibrated melee has saved us countless hours in production, allowing us to scale our most intricate designs.",
-    name: "Eleonore Dubois",
-    role: "Head of Production, Atelier Bijoux, Paris",
-    avatar:
-      "https://images.unsplash.com/photo-1652471943570-f3590a4e52ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdHxlbnwwfHx8fDE3NjE3ODM0OTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-  },
-  {
-    quote:
-      "Working with Belliza is a true partnership. They understand our need for unique, high-quality stones and have been instrumental in developing our latest collection.",
-    name: "Kenji Tanaka",
-    role: "Lead Designer, Tanaka Fine Jewellery, Tokyo",
-    avatar:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdHxlbnwwfHx8fDE3NjE3ODM0OTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-  },
-  {
-    quote:
-      "The reliability of their supply chain is critical for our business. With their Mumbai hub, we get our orders on time, every time, without any surprises.",
-    name: "Isabella Rossi",
-    role: "CEO, Rossi Diamonds, New York",
-    avatar:
-      "https://images.unsplash.com/photo-1595211877493-41a4e5f236b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdHxlbnwwfHx8fDE3NjE3ODM0OTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-  },
-];
 
 function Home() {
   const heroRef = useRef<HTMLElement | null>(null);
@@ -890,17 +849,6 @@ function Home() {
 
   </StaggerGroup>
 
-  {/* CLOSING STATEMENT */}
-  <Reveal className="mx-auto mt-12 max-w-3xl text-center">
-
-    <div className="mx-auto h-px w-16 bg-[#B08D57]/40" />
-
-    <p className="mt-6 text-sm font-medium uppercase tracking-[0.18em] text-[#5F584E] sm:text-base">
-     · Manufacturing Expertise · Flexible Sourcing · Global Partnership
-    </p>
-
-  </Reveal>
-
 </Section>
 
 {/* =========================================================
@@ -1160,19 +1108,6 @@ function Home() {
     </StaggerItem>
 
   </StaggerGroup>
-
-
-  {/* BOTTOM STATEMENT */}
-  <Reveal className="mx-auto mt-12 max-w-3xl text-center">
-
-    <div className="mx-auto h-px w-12 bg-[#B08D57]/40" />
-
-    <p className="mt-5 text-xs font-medium uppercase tracking-[0.2em] text-[#756E63] sm:text-sm">
-      Trusted Relationships · Exceptional Service · Long-Term Partnerships
-    </p>
-
-  </Reveal>
-
 </Section>
 
 
