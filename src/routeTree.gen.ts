@@ -14,9 +14,12 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as BespokeServicesRouteImport } from './routes/bespoke-services'
 import { Route as CommitmentRouteImport } from './routes/commitment'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DiamodsRouteImport } from './routes/diamods'
 import { Route as ManufacturingRouteImport } from './routes/manufacturing'
 import { Route as NewsAndEventsRouteImport } from './routes/news-and-events'
 import { Route as ProductsRouteImport } from './routes/products'
+import { Route as DiamondsIndexRouteImport } from './routes/diamonds.index'
+import { Route as DiamondsIdRouteImport } from './routes/diamonds.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -43,6 +46,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DiamodsRoute = DiamodsRouteImport.update({
+  id: '/diamods',
+  path: '/diamods',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ManufacturingRoute = ManufacturingRouteImport.update({
   id: '/manufacturing',
   path: '/manufacturing',
@@ -58,6 +66,16 @@ const ProductsRoute = ProductsRouteImport.update({
   path: '/products',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DiamondsIndexRoute = DiamondsIndexRouteImport.update({
+  id: '/diamonds/',
+  path: '/diamonds/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiamondsIdRoute = DiamondsIdRouteImport.update({
+  id: '/diamonds/$id',
+  path: '/diamonds/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -65,9 +83,12 @@ export interface FileRoutesByFullPath {
   '/bespoke-services': typeof BespokeServicesRoute
   '/commitment': typeof CommitmentRoute
   '/contact': typeof ContactRoute
+  '/diamods': typeof DiamodsRoute
   '/manufacturing': typeof ManufacturingRoute
   '/news-and-events': typeof NewsAndEventsRoute
   '/products': typeof ProductsRoute
+  '/diamonds/$id': typeof DiamondsIdRoute
+  '/diamonds/': typeof DiamondsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -75,9 +96,12 @@ export interface FileRoutesByTo {
   '/bespoke-services': typeof BespokeServicesRoute
   '/commitment': typeof CommitmentRoute
   '/contact': typeof ContactRoute
+  '/diamods': typeof DiamodsRoute
   '/manufacturing': typeof ManufacturingRoute
   '/news-and-events': typeof NewsAndEventsRoute
   '/products': typeof ProductsRoute
+  '/diamonds/$id': typeof DiamondsIdRoute
+  '/diamonds': typeof DiamondsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -86,9 +110,12 @@ export interface FileRoutesById {
   '/bespoke-services': typeof BespokeServicesRoute
   '/commitment': typeof CommitmentRoute
   '/contact': typeof ContactRoute
+  '/diamods': typeof DiamodsRoute
   '/manufacturing': typeof ManufacturingRoute
   '/news-and-events': typeof NewsAndEventsRoute
   '/products': typeof ProductsRoute
+  '/diamonds/$id': typeof DiamondsIdRoute
+  '/diamonds/': typeof DiamondsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -98,9 +125,12 @@ export interface FileRouteTypes {
     | '/bespoke-services'
     | '/commitment'
     | '/contact'
+    | '/diamods'
     | '/manufacturing'
     | '/news-and-events'
     | '/products'
+    | '/diamonds/$id'
+    | '/diamonds/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -108,9 +138,12 @@ export interface FileRouteTypes {
     | '/bespoke-services'
     | '/commitment'
     | '/contact'
+    | '/diamods'
     | '/manufacturing'
     | '/news-and-events'
     | '/products'
+    | '/diamonds/$id'
+    | '/diamonds'
   id:
     | '__root__'
     | '/'
@@ -118,9 +151,12 @@ export interface FileRouteTypes {
     | '/bespoke-services'
     | '/commitment'
     | '/contact'
+    | '/diamods'
     | '/manufacturing'
     | '/news-and-events'
     | '/products'
+    | '/diamonds/$id'
+    | '/diamonds/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -129,9 +165,12 @@ export interface RootRouteChildren {
   BespokeServicesRoute: typeof BespokeServicesRoute
   CommitmentRoute: typeof CommitmentRoute
   ContactRoute: typeof ContactRoute
+  DiamodsRoute: typeof DiamodsRoute
   ManufacturingRoute: typeof ManufacturingRoute
   NewsAndEventsRoute: typeof NewsAndEventsRoute
   ProductsRoute: typeof ProductsRoute
+  DiamondsIdRoute: typeof DiamondsIdRoute
+  DiamondsIndexRoute: typeof DiamondsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -171,6 +210,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/diamods': {
+      id: '/diamods'
+      path: '/diamods'
+      fullPath: '/diamods'
+      preLoaderRoute: typeof DiamodsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/manufacturing': {
       id: '/manufacturing'
       path: '/manufacturing'
@@ -192,6 +238,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/diamonds/': {
+      id: '/diamonds/'
+      path: '/diamonds'
+      fullPath: '/diamonds/'
+      preLoaderRoute: typeof DiamondsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diamonds/$id': {
+      id: '/diamonds/$id'
+      path: '/diamonds/$id'
+      fullPath: '/diamonds/$id'
+      preLoaderRoute: typeof DiamondsIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -201,9 +261,12 @@ const rootRouteChildren: RootRouteChildren = {
   BespokeServicesRoute: BespokeServicesRoute,
   CommitmentRoute: CommitmentRoute,
   ContactRoute: ContactRoute,
+  DiamodsRoute: DiamodsRoute,
   ManufacturingRoute: ManufacturingRoute,
   NewsAndEventsRoute: NewsAndEventsRoute,
   ProductsRoute: ProductsRoute,
+  DiamondsIdRoute: DiamondsIdRoute,
+  DiamondsIndexRoute: DiamondsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
