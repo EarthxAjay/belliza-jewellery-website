@@ -507,7 +507,6 @@ function Manufacturing() {
           </h3>
         </Reveal>
 
-        ```tsx
 <StaggerGroup
   stagger={0.08}
   className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
@@ -549,7 +548,7 @@ function Manufacturing() {
     </StaggerItem>
   ))}
 </StaggerGroup>
-```
+
 
       </Section>
 
