@@ -271,7 +271,7 @@ function Manufacturing() {
   return (
     <>
       <PageHero
-        eyebrow ="Diamond & Jewellery Manufacturing"
+        eyebrow="Diamond & Jewellery Manufacturing"
         title="The Art & Science of Diamond Creation."
         subtitle="We are not resellers. We are the manufacturers. Explore the technology that defines our quality."
         image={IMG.Globaloffice}
@@ -405,17 +405,25 @@ function Manufacturing() {
               clarity grades.
             </p>
 
-            <div className="mt-8 grid grid-cols-3 gap-4">
+            <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
               {[
                 { value: "100K+", label: "Customers" },
                 { value: "10M+", label: "Diamonds Supplied" },
                 { value: "IGI / GIA", label: "Certification" },
-              ].map((stat) => (
-                <div key={stat.label} className="spec-tile rounded-xl border border-[#E5DED0] bg-[#F1EBDD] transition-all duration-500 p-4 text-center">
-                  <p className="heading-xl text-[#3A342A] text-xl text-[#B08D57] sm:text-2xl">
+              ].map((stat, index) => (
+                <div
+                  key={stat.label}
+                  className={`spec-tile rounded-xl border border-[#E5DED0] bg-[#F1EBDD] p-4 text-center transition-all duration-500
+        ${index === 2 ? "col-span-2 sm:col-span-1" : ""}
+      `}
+                >
+                  <p className="heading-xl text-xl text-[#B08D57] sm:text-2xl">
                     {stat.value}
                   </p>
-                  <p className="eyebrow text-[#B08D57] mt-2 text-[0.6rem]">{stat.label}</p>
+
+                  <p className="eyebrow mt-2 text-[0.6rem] text-[#B08D57]">
+                    {stat.label}
+                  </p>
                 </div>
               ))}
             </div>
@@ -507,47 +515,47 @@ function Manufacturing() {
           </h3>
         </Reveal>
 
-<StaggerGroup
-  stagger={0.08}
-  className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
->
-  {JEWELLERY_STEPS.map((step) => (
-    <StaggerItem key={step.number}>
-      <article className="lux-panel rounded-2xl border border-[#E5DED0] bg-[#F1EBDD] shadow-[0_4px_18px_rgba(0,0,0,0.04)] group h-full overflow-hidden">
+        <StaggerGroup
+          stagger={0.08}
+          className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+        >
+          {JEWELLERY_STEPS.map((step) => (
+            <StaggerItem key={step.number}>
+              <article className="lux-panel rounded-2xl border border-[#E5DED0] bg-[#F1EBDD] shadow-[0_4px_18px_rgba(0,0,0,0.04)] group h-full overflow-hidden">
 
-        {/* IMAGE */}
-        <div className="relative aspect-[16/10] overflow-hidden">
-          <img
-            src={step.image}
-            alt={step.title}
-            loading="lazy"
-            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-          />
+                {/* IMAGE */}
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <img
+                    src={step.image}
+                    alt={step.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
 
-          {/* IMAGE OVERLAY */}
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/25 to-transparent" />
+                  {/* IMAGE OVERLAY */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/25 to-transparent" />
 
-          {/* STEP NUMBER */}
-          <span className="heading-xl absolute bottom-3 left-4 text-3xl text-[#B08D57]">
-            {step.number}
-          </span>
-        </div>
+                  {/* STEP NUMBER */}
+                  <span className="heading-xl absolute bottom-3 left-4 text-3xl text-[#B08D57]">
+                    {step.number}
+                  </span>
+                </div>
 
-        {/* CONTENT */}
-        <div className="p-6">
-          <h4 className="heading-xl text-lg text-[#3A342A]">
-            {step.title}
-          </h4>
+                {/* CONTENT */}
+                <div className="p-6">
+                  <h4 className="heading-xl text-lg text-[#3A342A]">
+                    {step.title}
+                  </h4>
 
-          <p className="mt-3 text-sm leading-relaxed text-[#6F665A]">
-            {step.body}
-          </p>
-        </div>
+                  <p className="mt-3 text-sm leading-relaxed text-[#6F665A]">
+                    {step.body}
+                  </p>
+                </div>
 
-      </article>
-    </StaggerItem>
-  ))}
-</StaggerGroup>
+              </article>
+            </StaggerItem>
+          ))}
+        </StaggerGroup>
 
 
       </Section>
@@ -581,7 +589,7 @@ function Manufacturing() {
         >
           {JEWELLERY_TYPES.map((item) => (
             <StaggerItem key={item}>
-              <div className="spec-tile rounded-xl border border-[#E5DED0] bg-[#F1EBDD] transition-all duration-500 p-5 text-center text-sm font-medium hover:border-[#D8C08A]">
+              <div className="spec-tile rounded-xl border border-[#E5DED0] bg-[#F1EBDD] transition-all duration-500 p-5 text-center text-sm font-medium hover:border-[#D8C08A] h-full">
                 {item}
               </div>
             </StaggerItem>
@@ -736,8 +744,11 @@ function Manufacturing() {
         <StaggerGroup className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {B2B_ITEMS.map((item) => (
             <StaggerItem key={item.title}>
-              <article className="spec-tile rounded-xl border border-[#E5DED0] bg-[#F1EBDD] transition-all duration-500 h-full p-7 hover:border-[#D8C08A]">
-                <h3 className="heading-xl text-[#3A342A] text-lg">{item.title}</h3>
+              <article className="spec-tile rounded-xl border border-[#E5DED0] bg-[#F1EBDD] transition-all duration-500 h-full p-7 text-center sm:text-left hover:border-[#D8C08A]">
+                <h3 className="heading-xl text-[#3A342A] text-lg">
+                  {item.title}
+                </h3>
+
                 <p className="mt-3 text-sm leading-relaxed text-[#6F665A]">
                   {item.body}
                 </p>
@@ -777,7 +788,7 @@ function Manufacturing() {
         <Reveal className="lux-panel rounded-2xl border border-[#E5DED0] bg-[#F1EBDD] shadow-[0_4px_18px_rgba(0,0,0,0.04)] mx-auto max-w-4xl p-10 text-center lux-shadow sm:p-14">
           <p className="eyebrow text-[#B08D57]">Join With Belliza Family</p>
           <h2 className="heading-xl text-[#3A342A] mt-4 text-3xl sm:text-4xl">
-           Let’s Create Something Exceptional With Belliza
+            Let’s Create Something Exceptional With Belliza
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#6F665A]">
             Whether you are sourcing a specific diamond, developing a bespoke jewellery collection or seeking a trusted manufacturing partner, Belliza works with brands, designers, retailers and professional buyers worldwide.

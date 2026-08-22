@@ -96,7 +96,7 @@ function RangeRow({
 
 function Viewer360({ src, title }: { src: string; title: string }) {
   return (
-    <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-secondary">
+    <div className="relative aspect-[1/1.3] w-full overflow-hidden rounded-xl bg-secondary">
       <iframe
         src={src}
         title={title}
