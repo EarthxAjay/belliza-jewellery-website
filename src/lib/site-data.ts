@@ -1,4 +1,10 @@
 export const IMG = {
+
+
+  //   FEATURED_VIDEO
+
+    FEATURED_VIDEO : "https://res.cloudinary.com/lgpagaff/video/upload/v1787471443/VID_20260823_131534.mp4",
+  
    hero: "https://firebasestorage.googleapis.com/v0/b/cvdone-portal.firebasestorage.app/o/NavkarWebsite%2FHome%20page%20Image.png?alt=media&token=979849b9-0111-43a8-b379-ed7583d1e3ae",
 
   //  manufacturing
