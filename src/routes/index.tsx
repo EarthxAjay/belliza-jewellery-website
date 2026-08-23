@@ -404,10 +404,10 @@ function Home() {
       </p>
 
       <div className="mt-7 space-y-2 border-t border-[#E5DED0] pt-5 text-left">
-        <p className="text-sm">Rings</p>
-        <p className="text-sm">Earrings</p>
-        <p className="text-sm">Pendants</p>
-        <p className="text-sm">Bracelets</p>
+        <p className="text-sm">Women's jewelry</p>
+        <p className="text-sm">Men's jewelry</p>
+        <p className="text-sm">Diamonds jewelry</p>
+        <p className="text-sm">All type jewelry</p>
          <p className="text-sm">BELLIZA SIGNATURE CRAFT JEWELRY</p>
       </div>
     </StaggerItem>
@@ -542,17 +542,6 @@ function Home() {
     </StaggerItem>
 
   </StaggerGroup>
-
-  {/* FINAL TRUST MESSAGE */}
-  <Reveal className="mx-auto mt-10 max-w-3xl text-center">
-    <p className="text-sm leading-7 text-[#5F584E] sm:text-base">
-      <span className="font-semibold text-[#332E27]">
-        Your confidence matters.
-      </span>{" "}
-      We believe a strong jewellery partnership begins with transparency,
-      continues with consistent service, and grows through trust.
-    </p>
-  </Reveal>
 
 </Section>
 
