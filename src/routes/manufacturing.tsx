@@ -59,7 +59,7 @@ const PROCESS_STEPS = [
     number: "01",
     title: "Diamond Growth",
     image: IMG.Rough,
-    body: "Lab-grown diamonds are produced using controlled CVD or HPHT growth technologies according to the required specifications.",
+    body: "Natural and laboratory-grown diamonds, sourced to meet precise specifications across diverse shapes, sizes, colours, and qualities.",
   },
   {
     number: "02",
@@ -280,7 +280,7 @@ function Manufacturing() {
       {/* INTRODUCTION */}
       <Section>
         <Reveal className="mx-auto max-w-3xl text-center">
-          <p className="eyebrow text-[#B08D57]">Diamond &amp; Jewellery Manufacturing</p>
+          <p className="eyebrow text-[#B08D57]">From Diamond Expertise to Exceptional Jewellery</p>
           <h2 className="heading-xl text-[#3A342A] mt-4 text-3xl sm:text-4xl">
             From Diamond Creation to Finished Jewellery
           </h2>
@@ -301,10 +301,143 @@ function Manufacturing() {
         </Reveal>
       </Section>
 
+{/* =========================================================
+     WHY BELLIZA
+========================================================= */}
+
+<Section className="border-y border-[#E5DED0] bg-[#FCFBF8]">
+
+  {/* HEADER */}
+  <Reveal className="mx-auto max-w-5xl text-center">
+
+    <p className="text-xs font-medium uppercase tracking-[0.28em] text-[#B08D57] sm:text-sm">
+      Why Belliza
+    </p>
+
+    <h2 className="heading-xl mt-5 text-3xl sm:text-5xl lg:text-6xl">
+      The Advantage of the Source.
+    </h2>
+
+    <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-[#756E63] sm:text-lg">
+      Manufacturing expertise combined with flexible sourcing, quality
+      control, and dependable service for individual and business
+      requirements worldwide.
+    </p>
+  </Reveal>
+
+  {/* ADVANTAGES */}
+  <StaggerGroup className="mx-auto mt-12 grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
+
+    {/* DIRECT MANUFACTURING */}
+    <StaggerItem
+      className="group rounded-2xl border border-[#E5DED0] bg-[#FCFBF8] p-7 transition-all duration-500 hover:-translate-y-1 hover:border-[#B08D57]/50 hover:bg-[#B08D57]/5 hover:shadow-[0_14px_40px_rgba(0,0,0,0.06)] sm:p-8"
+    >
+      <span className="text-2xl font-light text-[#B08D57]">01</span>
+
+      <h3 className="heading-xl mt-6 text-xl sm:text-2xl">
+        Direct Manufacturing
+      </h3>
+
+      <p className="mt-3 text-sm leading-6 text-[#756E63]">
+        Direct access to manufacturing capabilities enables greater control
+        over quality, specifications, production, and supply.
+      </p>
+    </StaggerItem>
+
+    {/* FLEXIBLE SPECIFICATIONS */}
+    <StaggerItem
+      className="group rounded-2xl border border-[#E5DED0] bg-[#FCFBF8] p-7 transition-all duration-500 hover:-translate-y-1 hover:border-[#B08D57]/50 hover:bg-[#B08D57]/5 hover:shadow-[0_14px_40px_rgba(0,0,0,0.06)] sm:p-8"
+    >
+      <span className="text-2xl font-light text-[#B08D57]">02</span>
+
+      <h3 className="heading-xl mt-6 text-xl sm:text-2xl">
+        Flexible Specifications
+      </h3>
+
+      <p className="mt-3 text-sm leading-6 text-[#756E63]">
+        From individual stones to larger requirements, specifications can be
+        aligned with your product, design, and sourcing needs.
+      </p>
+    </StaggerItem>
+
+    {/* QUALITY CONTROL */}
+    <StaggerItem
+      className="group rounded-2xl border border-[#E5DED0] bg-[#FCFBF8] p-7 transition-all duration-500 hover:-translate-y-1 hover:border-[#B08D57]/50 hover:bg-[#B08D57]/5 hover:shadow-[0_14px_40px_rgba(0,0,0,0.06)] sm:p-8"
+    >
+      <span className="text-2xl font-light text-[#B08D57]">03</span>
+
+      <h3 className="heading-xl mt-6 text-xl sm:text-2xl">
+        Quality Control
+      </h3>
+
+      <p className="mt-3 text-sm leading-6 text-[#756E63]">
+        Attention to precision, consistency, finishing, and specifications
+        helps maintain dependable quality across every requirement.
+      </p>
+    </StaggerItem>
+
+    {/* GLOBAL SUPPLY */}
+    <StaggerItem
+      className="group rounded-2xl border border-[#E5DED0] bg-[#FCFBF8] p-7 transition-all duration-500 hover:-translate-y-1 hover:border-[#B08D57]/50 hover:bg-[#B08D57]/5 hover:shadow-[0_14px_40px_rgba(0,0,0,0.06)] sm:p-8"
+    >
+      <span className="text-2xl font-light text-[#B08D57]">04</span>
+
+      <h3 className="heading-xl mt-6 text-xl sm:text-2xl">
+        Global Supply
+      </h3>
+
+      <p className="mt-3 text-sm leading-6 text-[#756E63]">
+        Supporting customers across international markets with dependable
+        sourcing and supply solutions.
+      </p>
+    </StaggerItem>
+
+    {/* RELIABLE SERVICE */}
+    <StaggerItem
+      className="group rounded-2xl border border-[#E5DED0] bg-[#FCFBF8] p-7 transition-all duration-500 hover:-translate-y-1 hover:border-[#B08D57]/50 hover:bg-[#B08D57]/5 hover:shadow-[0_14px_40px_rgba(0,0,0,0.06)] sm:p-8"
+    >
+      <span className="text-2xl font-light text-[#B08D57]">05</span>
+
+      <h3 className="heading-xl mt-6 text-xl sm:text-2xl">
+        Reliable Service
+      </h3>
+
+      <p className="mt-3 text-sm leading-6 text-[#756E63]">
+        Clear communication, responsive support, and practical solutions
+        throughout the sourcing and supply process.
+      </p>
+    </StaggerItem>
+
+    {/* LONG-TERM PARTNERSHIP */}
+    <StaggerItem
+      className="group rounded-2xl border border-[#E5DED0] bg-[#FCFBF8] p-7 transition-all duration-500 hover:-translate-y-1 hover:border-[#B08D57]/50 hover:bg-[#B08D57]/5 hover:shadow-[0_14px_40px_rgba(0,0,0,0.06)] sm:p-8"
+    >
+      <span className="text-2xl font-light text-[#B08D57]">06</span>
+
+      <h3 className="heading-xl mt-6 text-xl sm:text-2xl">
+        Long-Term Partnership
+      </h3>
+
+      <p className="mt-3 text-sm leading-6 text-[#756E63]">
+        Built around consistency, trust, transparent communication, and
+        relationships designed to grow over time.
+      </p>
+    </StaggerItem>
+
+  </StaggerGroup>
+
+</Section>
+
+
+
+
       {/* DIAMOND MANUFACTURING PROCESS */}
+
+
+
       <Section className="border-y border-[#E5DED0] bg-[#F8F6F1]">
         <Reveal className="mx-auto max-w-3xl text-center">
-          <p className="eyebrow text-[#B08D57]">Our Process</p>
+          <p className="eyebrow text-[#B08D57]">The Craft Behind Our Diamonds</p>
           <h2 className="heading-xl text-[#3A342A] mt-4 text-3xl sm:text-4xl">
             How a Diamond Becomes a Finished Stone
           </h2>
@@ -343,40 +476,7 @@ function Manufacturing() {
         </StaggerGroup>
       </Section>
 
-      {/* DIAMOND SHAPES */}
-      {/* <Section>
-        <Reveal className="mx-auto max-w-3xl text-center">
-          <p className="eyebrow text-[#B08D57]">Diamond Shapes</p>
-          <h2 className="heading-xl text-[#3A342A] mt-4 text-3xl sm:text-4xl">
-            Diamond Shapes for Every Jewellery Design
-          </h2>
-          <p className="mt-6 text-base leading-relaxed text-[#6F665A]">
-            Belliza offers diamonds across classic and contemporary shapes,
-            subject to inventory and individual specifications.
-          </p>
-        </Reveal>
 
-        <StaggerGroup
-          stagger={0.05}
-          className="mt-12 grid grid-cols-3 gap-4 sm:grid-cols-4 lg:grid-cols-5"
-        >
-          {SHAPES.map((name) => (
-            <StaggerItem key={name}>
-              <div className="spec-tile rounded-xl border border-[#E5DED0] bg-[#F1EBDD] transition-all duration-500 group flex h-full flex-col items-center gap-3 p-4 text-center hover:border-[#D8C08A]">
-                <img
-                  src={IMG.manufacturing}
-                  alt={`${name} diamond shape`}
-                  loading="lazy"
-                  className="h-16 w-16 object-contain transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6"
-                />
-                <span className="text-xs font-medium tracking-wide text-[#6F665A]">
-                  {name}
-                </span>
-              </div>
-            </StaggerItem>
-          ))}
-        </StaggerGroup>
-      </Section> */}
 
       {/* GLOBAL DIAMOND SUPPLY */}
       <Section className="border-y border-[#E5DED0] bg-[#F8F6F1]">
@@ -507,6 +607,7 @@ function Manufacturing() {
           </h3>
         </Reveal>
 
+        ```tsx
 <StaggerGroup
   stagger={0.08}
   className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
@@ -548,7 +649,7 @@ function Manufacturing() {
     </StaggerItem>
   ))}
 </StaggerGroup>
-
+```
 
       </Section>
 
@@ -688,7 +789,38 @@ function Manufacturing() {
         </StaggerGroup>
       </Section>
 
+
+      {/* B2B JEWELLERY MANUFACTURING */}
+
+      <Section className="border-y border-[#E5DED0] bg-[#F8F6F1]">
+        <Reveal className="mx-auto max-w-3xl text-center">
+          <p className="eyebrow text-[#B08D57]">Fine Jewellery Manufacturing</p>
+          <h2 className="heading-xl text-[#3A342A] mt-4 text-3xl sm:text-4xl">
+            Crafted for Brands That Demand Excellence
+          </h2>
+          <p className="mt-6 text-base leading-relaxed text-[#6F665A]">
+            From diamonds to finished jewellery, Belliza provides end-to-end manufacturing solutions for global jewellery brands, retailers and designers. Combining precision, craftsmanship and responsible sourcing, we transform concepts into refined jewellery created to meet exacting international standards.
+          </p>
+        </Reveal>
+
+        <StaggerGroup className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {B2B_ITEMS.map((item) => (
+            <StaggerItem key={item.title}>
+              <article className="spec-tile rounded-xl border border-[#E5DED0] bg-[#F1EBDD] transition-all duration-500 h-full p-7 hover:border-[#D8C08A]">
+                <h3 className="heading-xl text-[#3A342A] text-lg">{item.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-[#6F665A]">
+                  {item.body}
+                </p>
+              </article>
+            </StaggerItem>
+          ))}
+        </StaggerGroup>
+      </Section>
+
+
+
       {/* CERTIFICATION */}
+      
       <Section>
         <Reveal className="mx-auto max-w-3xl text-center">
           <p className="eyebrow text-[#B08D57]">Belliza Certification</p>
@@ -721,31 +853,6 @@ function Manufacturing() {
         </StaggerGroup>
       </Section>
 
-      {/* B2B JEWELLERY MANUFACTURING */}
-      <Section className="border-y border-[#E5DED0] bg-[#F8F6F1]">
-        <Reveal className="mx-auto max-w-3xl text-center">
-          <p className="eyebrow text-[#B08D57]">Fine Jewellery Manufacturing</p>
-          <h2 className="heading-xl text-[#3A342A] mt-4 text-3xl sm:text-4xl">
-            Crafted for Brands That Demand Excellence
-          </h2>
-          <p className="mt-6 text-base leading-relaxed text-[#6F665A]">
-            From diamonds to finished jewellery, Belliza provides end-to-end manufacturing solutions for global jewellery brands, retailers and designers. Combining precision, craftsmanship and responsible sourcing, we transform concepts into refined jewellery created to meet exacting international standards.
-          </p>
-        </Reveal>
-
-        <StaggerGroup className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {B2B_ITEMS.map((item) => (
-            <StaggerItem key={item.title}>
-              <article className="spec-tile rounded-xl border border-[#E5DED0] bg-[#F1EBDD] transition-all duration-500 h-full p-7 hover:border-[#D8C08A]">
-                <h3 className="heading-xl text-[#3A342A] text-lg">{item.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-[#6F665A]">
-                  {item.body}
-                </p>
-              </article>
-            </StaggerItem>
-          ))}
-        </StaggerGroup>
-      </Section>
 
       {/* FAQ */}
       <Section>
