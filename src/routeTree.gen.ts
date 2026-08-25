@@ -18,8 +18,6 @@ import { Route as DiamodsRouteImport } from './routes/diamods'
 import { Route as ManufacturingRouteImport } from './routes/manufacturing'
 import { Route as NewsAndEventsRouteImport } from './routes/news-and-events'
 import { Route as ProductsRouteImport } from './routes/products'
-import { Route as DiamondsIndexRouteImport } from './routes/diamonds.index'
-import { Route as DiamondsIdRouteImport } from './routes/diamonds.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -66,16 +64,6 @@ const ProductsRoute = ProductsRouteImport.update({
   path: '/products',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DiamondsIndexRoute = DiamondsIndexRouteImport.update({
-  id: '/diamonds/',
-  path: '/diamonds/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DiamondsIdRoute = DiamondsIdRouteImport.update({
-  id: '/diamonds/$id',
-  path: '/diamonds/$id',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -87,8 +75,6 @@ export interface FileRoutesByFullPath {
   '/manufacturing': typeof ManufacturingRoute
   '/news-and-events': typeof NewsAndEventsRoute
   '/products': typeof ProductsRoute
-  '/diamonds/$id': typeof DiamondsIdRoute
-  '/diamonds/': typeof DiamondsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -100,8 +86,6 @@ export interface FileRoutesByTo {
   '/manufacturing': typeof ManufacturingRoute
   '/news-and-events': typeof NewsAndEventsRoute
   '/products': typeof ProductsRoute
-  '/diamonds/$id': typeof DiamondsIdRoute
-  '/diamonds': typeof DiamondsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -114,8 +98,6 @@ export interface FileRoutesById {
   '/manufacturing': typeof ManufacturingRoute
   '/news-and-events': typeof NewsAndEventsRoute
   '/products': typeof ProductsRoute
-  '/diamonds/$id': typeof DiamondsIdRoute
-  '/diamonds/': typeof DiamondsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -129,8 +111,6 @@ export interface FileRouteTypes {
     | '/manufacturing'
     | '/news-and-events'
     | '/products'
-    | '/diamonds/$id'
-    | '/diamonds/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -142,8 +122,6 @@ export interface FileRouteTypes {
     | '/manufacturing'
     | '/news-and-events'
     | '/products'
-    | '/diamonds/$id'
-    | '/diamonds'
   id:
     | '__root__'
     | '/'
@@ -155,8 +133,6 @@ export interface FileRouteTypes {
     | '/manufacturing'
     | '/news-and-events'
     | '/products'
-    | '/diamonds/$id'
-    | '/diamonds/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -169,8 +145,6 @@ export interface RootRouteChildren {
   ManufacturingRoute: typeof ManufacturingRoute
   NewsAndEventsRoute: typeof NewsAndEventsRoute
   ProductsRoute: typeof ProductsRoute
-  DiamondsIdRoute: typeof DiamondsIdRoute
-  DiamondsIndexRoute: typeof DiamondsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -238,20 +212,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/diamonds/': {
-      id: '/diamonds/'
-      path: '/diamonds'
-      fullPath: '/diamonds/'
-      preLoaderRoute: typeof DiamondsIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/diamonds/$id': {
-      id: '/diamonds/$id'
-      path: '/diamonds/$id'
-      fullPath: '/diamonds/$id'
-      preLoaderRoute: typeof DiamondsIdRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -265,8 +225,6 @@ const rootRouteChildren: RootRouteChildren = {
   ManufacturingRoute: ManufacturingRoute,
   NewsAndEventsRoute: NewsAndEventsRoute,
   ProductsRoute: ProductsRoute,
-  DiamondsIdRoute: DiamondsIdRoute,
-  DiamondsIndexRoute: DiamondsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

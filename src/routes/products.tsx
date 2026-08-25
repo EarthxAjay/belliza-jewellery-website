@@ -42,14 +42,14 @@ function Products() {
           body="This is our core strength. We offer an extensive inventory of GIA and IGI certified diamonds, specializing in sizes from 0.001 carat to over 50 carats. Our focus is on premium DEF colors and high-clarity (VVS-VS) stones, available in all standard and exotic shapes."
         />
 
-        <div className="mt-10 text-center">
+        {/* <div className="mt-10 text-center">
           <Link
             to="/diamonds"
             className="inline-block rounded-full bg-primary px-7 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
           >
             Explore Diamonds
           </Link>
-        </div>
+        </div> */}
       </Section>
 
       <Section className="border-y border-border bg-[color-mix(in_oklab,var(--color-surface)_50%,transparent)]">
