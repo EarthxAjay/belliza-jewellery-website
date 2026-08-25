@@ -34,12 +34,13 @@ export function Navbar() {
 
         <div className="flex items-center gap-2">
           <a
-            href="https://www.etsy.com/uk/shop/Bellizajewel"
+            // href="https://www.etsy.com/uk/shop/Bellizajewel"
+             href="https://www.belliza.co"
             target="_blank"
             rel="noreferrer"
             className="rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
           >
-           ETSY
+           BELLIZA
           </a>
           <button
             type="button"
