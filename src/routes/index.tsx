@@ -464,7 +464,7 @@ function Home() {
     {/* FREE SHIPPING & RETURNS */}
     <StaggerItem>
       <a
-        href="/shipping-returns"
+        // href="/shipping-returns"
         className="group flex flex-col items-center text-center"
       >
         <div className="flex h-24 w-24 items-center justify-center rounded-full border border-[#E5DED0] bg-[#F8F6F1] transition-all duration-300 group-hover:-translate-y-1 group-hover:border-[#B08D57] group-hover:shadow-[0_8px_25px_rgba(0,0,0,0.08)]">
@@ -480,7 +480,7 @@ function Home() {
     {/* FREE LIFETIME WARRANTY */}
     <StaggerItem>
       <a
-        href="/warranty"
+        // href="/warranty"
         className="group flex flex-col items-center text-center"
       >
         <div className="flex h-24 w-24 items-center justify-center rounded-full border border-[#E5DED0] bg-[#F8F6F1] transition-all duration-300 group-hover:-translate-y-1 group-hover:border-[#B08D57] group-hover:shadow-[0_8px_25px_rgba(0,0,0,0.08)]">
@@ -512,7 +512,7 @@ function Home() {
     {/* LIFETIME DIAMOND UPGRADE */}
     <StaggerItem>
       <a
-        href="/diamond-upgrade"
+        // href="/diamond-upgrade"
         className="group flex flex-col items-center text-center"
       >
         <div className="flex h-24 w-24 items-center justify-center rounded-full border border-[#E5DED0] bg-[#F8F6F1] transition-all duration-300 group-hover:-translate-y-1 group-hover:border-[#B08D57] group-hover:shadow-[0_8px_25px_rgba(0,0,0,0.08)]">
@@ -528,7 +528,7 @@ function Home() {
     {/* FREE 1-YEAR RESIZING */}
     <StaggerItem>
       <a
-        href="/resizing"
+        // href="/resizing"
         className="group flex flex-col items-center text-center"
       >
         <div className="flex h-24 w-24 items-center justify-center rounded-full border border-[#E5DED0] bg-[#F8F6F1] transition-all duration-300 group-hover:-translate-y-1 group-hover:border-[#B08D57] group-hover:shadow-[0_8px_25px_rgba(0,0,0,0.08)]">
